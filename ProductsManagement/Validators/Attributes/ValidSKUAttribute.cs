@@ -32,7 +32,7 @@ public class ValidSKUAttribute : ValidationAttribute, IClientModelValidator
     public void AddValidation(ClientModelValidationContext context)
     {
         context.Attributes.Add("data-val", "true");
-        context.Attributes.Add("data-val-sku", ErrorMessage);
+        context.Attributes.Add("data-val-sku", ErrorMessage ?? "Invalid SKU format.");
         context.Attributes.Add("data-val-sku-pattern", "^[a-zA-Z0-9\\-]{5,20}$");
     }
 }

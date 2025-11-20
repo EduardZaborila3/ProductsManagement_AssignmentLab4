@@ -27,7 +27,7 @@ public class PriceFormatterResolver : IValueResolver<Product, object, string>
         var price = source.Category == ProductCategory.Home 
             ? Math.Round(source.Price * 0.9m, 2) 
             : source.Price;
-        return price.ToString("C2", CultureInfo.CurrentCulture);
+        return price.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
     }
 }
 
@@ -36,7 +36,7 @@ public class ProductAgeResolver : IValueResolver<Product, object, string>
     public string Resolve(Product source, object destination, string destMember, ResolutionContext context)
     {
         var age = DateTime.UtcNow - source.ReleaseDate;
-        if (age.TotalDays < 30)
+        if (age.TotalDays <= 31)
         {
             return "New Release";
         }
