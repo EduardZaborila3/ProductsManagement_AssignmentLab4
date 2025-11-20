@@ -6,5 +6,4 @@ public enum ProductCategory
     Clothing = 1,
     Books = 2,
     Home = 3
-    
 }

@@ -96,7 +96,7 @@ public class AvailabilityStatusResolver : IValueResolver<Product, object, string
         if (source.IsAvailable && source.StockQuantity <= 5)
         {
             return "Limited Stock";
-        }
+        }   
         
         return "In Stock";
     }
