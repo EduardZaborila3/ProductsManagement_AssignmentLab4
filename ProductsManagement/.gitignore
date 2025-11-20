@@ -24,3 +24,7 @@ appsettings.Local.json
 .env
 
 *.dmp
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
